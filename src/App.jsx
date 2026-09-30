@@ -1,23 +1,20 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import ServicesCard from "./components/ServicesCard";
-import StudentCard from "./components/StudentCard";
-import Welcome from "./components/Welcome";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Service from "./pages/Service";
+
 
 function App() {
   // link github repo
   return (
-    <div className="App">
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-
-      <ServicesCard />
-      <Welcome />
-      <StudentCard
-        name="John Doe"
-        age="20"
-        favoriteLang="JavaScript"
-        isStudent={true}
-      />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/service" element={<Service />} />
+      </Routes>;
+    </BrowserRouter>
   );
 }
 
